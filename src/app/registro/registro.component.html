@@ -1,0 +1,30 @@
+<div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+              <label for="user" class="form-label" [(ngModel)]="this.email">Email address</label>
+              <input type="email" class="form-control" id="user" aria-describedby="emailHelp" required>
+            </div>
+            <div class="mb-3">
+              <label for="psw" class="form-label" [(ngModel)]="this.pass">Password</label>
+              <input type="password" class="form-control" id="psw" required
+              pattern="[a-zA-Z0-9!#$%&'*\/=?^_`{|}~+-]([\.]?[a-zA-Z0-9!#$%&'*\/=?^_`{|}~+-])+@[a-zA-Z0-9]([^@&%$/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2,3})?">
+            </div>
+            <div id="emailHelp" class="form-text">You don't have any account yet? <a data-bs-dismiss="modal" routerLink="/signup">Create a new one</a></div>
+            <br>
+            <button type="submit"  class="btn btn-primary" (click)="this.logeado.login(this.email, this.pass)">Submit</button>
+          </div>
+          <div class="modal-footer">
+            <button (click)="this.logeado.google()" data-bs-dismiss="modal" type="button" class="btn btn-secondary">Join with Google <i class="fa-brands fa-google"></i></button>
+            <button (click)="this.logeado.github()" data-bs-dismiss="modal"  type="button" class="btn btn-secondary">Join with GitHub <i class="fa-brands fa-github"></i></button>
+         </div>
+      </div>
+    </div>
+  </div>
+
+

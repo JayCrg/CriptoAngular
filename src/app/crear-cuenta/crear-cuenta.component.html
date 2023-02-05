@@ -1,0 +1,20 @@
+<div class="container mb-5 mt-5">
+<div class="row">
+  <div class="col-2"></div>
+<div class="col-8">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" [(ngModel)]="email" aria-describedby="emailHelp">
+    <div id="emailHelp" *ngIf="!checkEmail(email)" class="form-text">us1er@@email.com(.exm)</div>
+
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control"[(ngModel)]="pass" id="exampleInputPassword1">
+    <div id="emailHelp" *ngIf="!checkPass(pass)" class="form-text">La contraseña debe tener al menos 8 caracteres, una minúscula, un número y una mayúscula</div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!(checkEmail(email)&&checkPass(pass))" (click)="this.crearCuenta.signUp(email, pass)">Submit</button>
+</div>
+<div class="col-2"></div>
+</div>
+</div>

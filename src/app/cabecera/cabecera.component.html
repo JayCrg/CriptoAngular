@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home"><img src="../../assets/icono.png" alt="logo de TuTienda" height="75"
+          width="75"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-1">
+          <li class="nav-item" *ngIf="this.logeado.isLogged">
+            <a class="nav-link active text-start" data-bs-toggle="modal" href="#login" role="button"
+              aria-controls="login">Bienvenido {{ this.logeado.userEmail }}</a>
+          </li>
+            <li class="nav-item" *ngIf="!this.logeado.isLogged">
+              <a class="nav-link active text-start" data-bs-toggle="modal" href="#login" role="button"
+                aria-controls="login">Log in</a>
+            </li>
+            <li class="nav-item" *ngIf="this.logeado.isLogged">
+              <a (click)="this.logeado.signOut()" class="nav-link active text-start" data-bs-toggle="modal" href="#logout" role="button"
+                aria-controls="logout">Log out</a>
+            </li>
+          <li> <a routerLink="/portfolio" *ngIf="this.logeado.isLogged" class="nav-link active" data-bs-toggle="offcanvas" href="#monedas" role="button"
+              aria-controls="monedas" href="#">PortFolio</a>
+          </li>
+        </ul>
+        <form class="d-flex ms-lg-5 ">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success botonNav" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<app-registro></app-registro>  

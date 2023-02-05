@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="rows">
+            <table class="table align-self-end">
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Capitalizacion</th>
+                        <th scope="col">Volumen</th>
+                        <th scope="col">Maximo 24h</th>
+                        <th scope="col">Minimo 24h</th>
+                        <th scopa="col">Ver Más</th>
+                        <th scope="col">Añadir</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cripto of pruebaServicio.listaMonedas | slice:(page-1)*pageSize : page*pageSize"
+                        [id]='cripto.name'>
+                        <td><img [src]='cripto.image.thumb' alt="Icono Moneda" title="Clica para más información">
+                        </td>
+                        <td>{{cripto.name}} ({{cripto.symbol}})</td>
+                        <td>{{cripto.market_data.current_price.eur}}€</td>
+                        <td>{{cripto.market_data.market_cap.eur}}€</td>
+                        <td>{{cripto.market_data.total_volume.eur}}€</td>
+                        <td>{{cripto.market_data.high_24h.eur}}€</td>
+                        <td>{{cripto.market_data.low_24h.eur}}€</td>
+                        <td title="More information"><a routerLink="/detalle/{{cripto.symbol}}"><i class="fa-solid fa-circle-info"></i></a></td>
+                        <td title="Add to favorite"><i class="fa-solid fa-plus"></i></td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+            <ngb-pagination [collectionSize]="pruebaServicio.listaMonedas.length" [(page)]="page" [pageSize]="pageSize"
+                (pageChange)="cambiarPagina($event)">
+            </ngb-pagination>
+</div>
+</div>
