@@ -1,0 +1,45 @@
+
+<button class="btn btn-secondary bt-5 bs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Mis Monedas
+  </button>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+
+        <table class="table align-self-end">
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Capitalizacion</th>
+                    <th scope="col">Volumen</th>
+                    <th scope="col">Maximo 24h</th>
+                    <th scope="col">Minimo 24h</th> 
+                    <th scopa="col">Ver Más</th>
+                    <th scope="col">Añadir</th>
+                </tr>
+            </thead>
+        <tbody>
+            <tr *ngFor="let cripto of datos, let i = index"
+            [id]='cripto.name'>
+            <td><img [src]='cripto.image.thumb' alt="Icono Moneda" title="Clica para más información"></td>
+            <td>{{cripto.symbol}}</td>
+            <td>{{cripto.market_data.current_price.eur}}€</td>
+            <td>{{cripto.market_data.market_cap.eur}}€</td>
+            <td>{{cripto.market_data.total_volume.eur}}€</td>
+            <td>{{cripto.market_data.high_24h.eur}}€</td>
+            <td>{{cripto.market_data.low_24h.eur}}€</td>  
+            <td title="More information"><a [routerLink]="['/detalle', cripto.id]"><i class="fa-solid fa-circle-info"></i></a></td>
+            <td title="Erase from favorite" (click)="borrar(cripto.id)"><i class="fa-solid fa-minus"></i></td>
+            
+        </tr>
+    </tbody>
+</table>
+  </div>
+</div>
+
+<!-- 
+<div class="container">
+    <div class="rows">
+    </div>
+</div> -->

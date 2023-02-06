@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/criptografia",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

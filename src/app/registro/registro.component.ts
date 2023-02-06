@@ -9,6 +9,6 @@ import { AuthService } from '../auth.service';
 export class RegistroComponent {
   email:string='';
   pass:string='';
-  constructor(public logeado: AuthService) { }
+  constructor(public logeado: AuthService) {}
 }
 

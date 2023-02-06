@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import{OnInit} from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
@@ -25,6 +24,9 @@ import { NgChartsModule } from '../../node_modules/ng2-charts';
 import { TablaComponent } from './tabla/tabla.component';
 import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { AuthGuard } from './guards/auth.guard';
+import { NoAuthGuard } from './guards/noAuth.guard';
+import { MisMonedasComponent } from './mis-monedas/mis-monedas.component';
+// import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -36,8 +38,8 @@ const routes: Routes = [
   { path: 'home', component: MenuPrincipalComponent },
   { path: 'portfolio', component: PortFolioComponent, canActivate: [AuthGuard] },
   { path: 'signup', component: CrearCuentaComponent},
+  { path: 'detalle/:id', component: DetalleComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundComponent },
-  { path: 'detalle/{id}', component: DetalleComponent },
 ];
 
 
@@ -56,6 +58,7 @@ const routes: Routes = [
     PortFolioComponent,
     TablaComponent,
     CrearCuentaComponent,
+    MisMonedasComponent
   ],
   imports: [
     BrowserModule,

@@ -9,8 +9,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-1">
           <li class="nav-item" *ngIf="this.logeado.isLogged">
-            <a class="nav-link active text-start" data-bs-toggle="modal" href="#login" role="button"
-              aria-controls="login">Bienvenido {{ this.logeado.userEmail }}</a>
+            <a class="nav-link active text-start">Bienvenido {{ this.logeado.userEmail }}</a>
           </li>
             <li class="nav-item" *ngIf="!this.logeado.isLogged">
               <a class="nav-link active text-start" data-bs-toggle="modal" href="#login" role="button"
@@ -31,4 +30,4 @@
       </div>
     </div>
   </nav>
-<app-registro></app-registro>  
+<app-registro  *ngIf="!this.logeado.isLogged"></app-registro>

@@ -1,4 +1,4 @@
-td[title="Add to favorite"]:hover i, td[title="More information"]:hover i {
+td[title="Erase from favorite"]:hover i, td[title="More information"]:hover i {
     color: #ff0000;
     scale: 1.5;
     transition: all 0.25s ease;

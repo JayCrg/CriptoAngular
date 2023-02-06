@@ -11,25 +11,19 @@ export class ControlApiService{
   public monedaSeleccionada = new Array<any>();
 
   constructor(private http: HttpClient) { 
-    // this.getList();
+    this.getList();
   }
 
-  ngOnInit(){
-    this.http.get('https://api.coingecko.com/api/v3/coins/list').subscribe(
+  getList(){
+    this.http.get('https://api.coingecko.com/api/v3/coins/').subscribe(
       (data:any) => {
         this.listaMonedas = data;
-        console.log(data);
       }
     )
   }
 
   getDetail(id:string){
-    this.http.get(`https://api.coingecko.com/api/v3/coins/${id}`).subscribe(
-      (data:any) => {
-        this.monedaSeleccionada = data;
-        console.log(data);
-      }
-    )
+    return this.http.get(`https://api.coingecko.com/api/v3/coins/${id}`)
   }
 }
 
