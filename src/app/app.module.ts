@@ -21,7 +21,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PortFolioComponent } from './port-folio/port-folio.component';
 import { NgChartsModule } from '../../node_modules/ng2-charts';
-import { TablaComponent } from './tabla/tabla.component';
 import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NoAuthGuard } from './guards/noAuth.guard';
@@ -56,7 +55,6 @@ const routes: Routes = [
     CabeceraComponent,
     PieComponent,
     PortFolioComponent,
-    TablaComponent,
     CrearCuentaComponent,
     MisMonedasComponent
   ],
